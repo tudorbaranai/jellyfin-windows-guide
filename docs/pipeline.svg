@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15">
+  <title>Add a movie to your TMDB watchlist from any device. Radarr picks it up and asks Prowlarr, which searches your sources and sends the results back. Radarr sends the torrent to qBittorrent, which saves it to the media drive. Jellyfin plays it on your devices, at home or anywhere through Tailscale.</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b6fd8"/>
+    </marker>
+  </defs>
+  <rect width="960" height="420" rx="14" fill="#ffffff"/>
+
+  <!-- Watchlist, outside the PC -->
+  <rect x="20" y="60" width="170" height="70" rx="9" fill="#ffffff" stroke="#b5b9c0"/>
+  <text x="105" y="91" text-anchor="middle" font-weight="600" fill="#1a1a1a">TMDB watchlist</text>
+  <text x="105" y="112" text-anchor="middle" font-size="13" fill="#444">add from any device</text>
+  <line x1="190" y1="95" x2="238" y2="95" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- The PC -->
+  <rect x="215" y="15" width="510" height="385" rx="12" fill="#f6f7f9" stroke="#b5b9c0" stroke-dasharray="5 4"/>
+  <text x="232" y="42" font-size="13" letter-spacing="1" fill="#666">YOUR WINDOWS PC</text>
+
+  <!-- Row 1 -->
+  <rect x="240" y="60" width="135" height="70" rx="9" fill="#fff4e5" stroke="#d98b1a"/>
+  <text x="307" y="91" text-anchor="middle" font-weight="600" fill="#1a1a1a">Radarr</text>
+  <text x="307" y="112" text-anchor="middle" font-size="13" fill="#444">your wanted list</text>
+
+  <rect x="580" y="60" width="135" height="70" rx="9" fill="#fff4e5" stroke="#d98b1a"/>
+  <text x="647" y="91" text-anchor="middle" font-weight="600" fill="#1a1a1a">Prowlarr</text>
+  <text x="647" y="112" text-anchor="middle" font-size="13" fill="#444">searches</text>
+
+  <!-- Radarr <-> Prowlarr -->
+  <line x1="375" y1="85" x2="578" y2="85" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <text x="477" y="77" text-anchor="middle" font-size="13" fill="#444">asks for the movie</text>
+  <line x1="580" y1="107" x2="377" y2="107" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <text x="477" y="124" text-anchor="middle" font-size="13" fill="#444">sends back what it found</text>
+
+  <!-- Row 2 -->
+  <rect x="240" y="245" width="135" height="70" rx="9" fill="#fff4e5" stroke="#d98b1a"/>
+  <text x="307" y="276" text-anchor="middle" font-weight="600" fill="#1a1a1a">qBittorrent</text>
+  <text x="307" y="297" text-anchor="middle" font-size="13" fill="#444">downloads</text>
+
+  <rect x="410" y="245" width="135" height="70" rx="9" fill="#eceff3" stroke="#6b7280"/>
+  <text x="477" y="276" text-anchor="middle" font-weight="600" fill="#1a1a1a">Media drive</text>
+  <text x="477" y="297" text-anchor="middle" font-size="13" fill="#444">nothing runs here</text>
+
+  <rect x="580" y="245" width="135" height="70" rx="9" fill="#e9f2ff" stroke="#3b6fd8"/>
+  <text x="647" y="276" text-anchor="middle" font-weight="600" fill="#1a1a1a">Jellyfin</text>
+  <text x="647" y="297" text-anchor="middle" font-size="13" fill="#444">plays your movies</text>
+
+  <line x1="307" y1="130" x2="307" y2="243" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <text x="316" y="192" font-size="13" fill="#444">sends the torrent</text>
+  <line x1="375" y1="280" x2="408" y2="280" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="545" y1="280" x2="578" y2="280" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <text x="477" y="345" text-anchor="middle" font-size="13" fill="#444">Radarr renames and files it</text>
+
+  <!-- Sources <-> Prowlarr -->
+  <rect x="755" y="60" width="185" height="70" rx="9" fill="#ffffff" stroke="#b5b9c0"/>
+  <text x="847" y="91" text-anchor="middle" font-weight="600" fill="#1a1a1a">Your sources</text>
+  <text x="847" y="112" text-anchor="middle" font-size="13" fill="#444">only ones you may use</text>
+  <line x1="715" y1="85" x2="753" y2="85" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="755" y1="107" x2="717" y2="107" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- Devices -->
+  <rect x="755" y="215" width="185" height="62" rx="9" fill="#ffffff" stroke="#3b6fd8"/>
+  <text x="847" y="242" text-anchor="middle" font-weight="600" fill="#1a1a1a">Your devices</text>
+  <text x="847" y="262" text-anchor="middle" font-size="13" fill="#444">at home</text>
+
+  <rect x="755" y="307" width="185" height="62" rx="9" fill="#ffffff" stroke="#3b6fd8"/>
+  <text x="847" y="334" text-anchor="middle" font-weight="600" fill="#1a1a1a">Your devices</text>
+  <text x="847" y="354" text-anchor="middle" font-size="13" fill="#444">anywhere</text>
+
+  <line x1="715" y1="270" x2="753" y2="250" stroke="#3b6fd8" stroke-width="2.5" marker-end="url(#b)"/>
+  <line x1="715" y1="292" x2="753" y2="334" stroke="#3b6fd8" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#b)"/>
+  <text x="847" y="392" text-anchor="middle" font-size="13" fill="#3b6fd8">dashed line: through Tailscale</text>
+</svg>

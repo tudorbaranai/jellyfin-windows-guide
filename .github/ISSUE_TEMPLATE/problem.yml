@@ -1,0 +1,32 @@
+name: A step didn't work
+description: Something in the guide doesn't work as written
+labels: ["bug"]
+body:
+  - type: input
+    id: step
+    attributes:
+      label: Guide part and step
+      placeholder: Part 7.4
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what you got. Paste the exact error text.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Windows and app versions
+      placeholder: Windows 11 24H2, Jellyfin 10.11, Radarr 5.x
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before sending
+      options:
+        - label: I checked docs/troubleshooting.md
+          required: true
+        - label: I removed passwords, API keys, IPs and personal data from what I pasted
+          required: true

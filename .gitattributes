@@ -1,0 +1,29 @@
+# Line endings: store LF in the repo, so Windows and macOS clones match (stops CRLF churn in diffs).
+* text=auto eol=lf
+
+# Shell scripts and hooks must stay LF or they will not run.
+*.sh text eol=lf
+.githooks/* text eol=lf
+
+# Windows-only files keep CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary: never try to merge or convert.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.bin binary
+
+# Tell GitHub's language bar what is not your code (keeps the stats honest).
+# vendor/** linguist-vendored
+# docs/** linguist-documentation
+# *.min.js linguist-generated
+# package-lock.json linguist-generated
