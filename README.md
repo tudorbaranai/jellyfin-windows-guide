@@ -2,6 +2,10 @@
 
 Your own Netflix-style movie server on Windows. Watch from anywhere.
 
+[![License](https://img.shields.io/github/license/tudorbaranai/jellyfin-windows-guide)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/tudorbaranai/jellyfin-windows-guide)](https://github.com/tudorbaranai/jellyfin-windows-guide/releases)
+[![Links](https://github.com/tudorbaranai/jellyfin-windows-guide/actions/workflows/links.yml/badge.svg)](https://github.com/tudorbaranai/jellyfin-windows-guide/actions/workflows/links.yml)
+
 https://github.com/user-attachments/assets/070c25db-9386-4f1f-87c6-17d358b761cb
 
 A step-by-step guide to turn a Windows PC into a movie server: your own library, a Netflix-style look, no ads, on all your devices, at home or away. Add a movie to your watchlist and it downloads, gets renamed and shows up by itself.

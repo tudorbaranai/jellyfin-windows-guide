@@ -1,0 +1,13 @@
+# Addresses that only exist on your own PC or network
+localhost
+127\.0\.0\.1
+192\.168\.
+100\.64\.
+my-server
+# This repo's own pages and badges (unreachable while the repo is private)
+github\.com/tudorbaranai/jellyfin-windows-guide
+img\.shields\.io/github/.*/tudorbaranai/jellyfin-windows-guide
+# Uploaded media (needs sign-in while the repo is private)
+github\.com/user-attachments
+# Sites that block automated checks but open fine in a browser
+opensubtitles\.com
