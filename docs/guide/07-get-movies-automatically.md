@@ -145,7 +145,34 @@ When done: close the PowerShell window and delete the indexer in Prowlarr.
 5. Test > Save.
 6. Settings > Import Lists > Import List Options (**Show Advanced**): **Clean Library Level** must be **Disabled**. Otherwise, taking a movie off your watchlist can remove it from Radarr.
 
-**Check:** add a movie to your TMDB watchlist. Radarr checks the list every few hours; to check now, Radarr > System > Tasks > **Import List Sync** > the circular arrows. The movie shows up in Radarr and starts downloading.
+**Check:** add a movie to your TMDB watchlist. Within 12 hours, Radarr reads the list, adds the movie and starts downloading it. Want it sooner? See the next step.
+
+### Faster: check every 10 minutes (optional)
+
+Radarr reads a TMDB list at most every 12 hours, and no setting changes that. [`tools/watchlist-sync.ps1`](../../tools/watchlist-sync.ps1) asks Radarr to read your list now, and Task Scheduler runs it every 10 minutes. Think of a note on the fridge: Radarr reads it twice a day; the script knocks every 10 minutes and says "read it again". Tested on Radarr 7.0.3. A later version may close this shortcut.
+
+Download the script to your Downloads folder, read it (it's short), then in admin PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force "C:\Program Files\WatchlistSync" | Out-Null
+Copy-Item "$HOME\Downloads\watchlist-sync.ps1" "C:\Program Files\WatchlistSync\"
+Unblock-File "C:\Program Files\WatchlistSync\watchlist-sync.ps1"
+
+$action = New-ScheduledTaskAction -Execute 'powershell.exe' `
+  -Argument '-NoProfile -NonInteractive -ExecutionPolicy Bypass -File "C:\Program Files\WatchlistSync\watchlist-sync.ps1"'
+$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 10)
+$principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount -RunLevel Highest
+$settings = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 5) `
+  -MultipleInstances IgnoreNew -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
+Register-ScheduledTask -TaskName 'Radarr watchlist sync' -Action $action -Trigger $trigger `
+  -Principal $principal -Settings $settings
+```
+
+The script sits in `C:\Program Files` because the task runs it as SYSTEM (Windows' most powerful account), and only admins can change files there. The API key isn't in the script: it reads it from Radarr's own settings. Don't go below 5 minutes: each check looks up every watchlist movie on Radarr's free metadata server.
+
+**Check:** add a movie to your watchlist. Within 10 minutes it's in Radarr, and Radarr > System > Logs shows `Starting Import List Refresh for List <your list name>`. Right after setup, Task Scheduler shows the result `267011`. That only means "not run yet".
+
+Pause: `Disable-ScheduledTask 'Radarr watchlist sync'`. Remove: `Unregister-ScheduledTask 'Radarr watchlist sync' -Confirm:$false`, then delete `C:\Program Files\WatchlistSync` and `C:\ProgramData\WatchlistSync`.
 
 ## 7.8 Add a movie in Radarr
 

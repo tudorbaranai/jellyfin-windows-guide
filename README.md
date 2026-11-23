@@ -126,6 +126,7 @@ This guide doesn't support piracy. Radarr, Prowlarr and qBittorrent are legal to
 | [`docs/troubleshooting.md`](docs/troubleshooting.md) | What breaks, and the fix |
 | [`docs/glossary.md`](docs/glossary.md) | Words like direct play, bitrate, remux, Tailscale |
 | [`tools/open-movies-indexer.ps1`](tools/open-movies-indexer.ps1) | Four free Blender films, to test the download pipeline |
+| [`tools/watchlist-sync.ps1`](tools/watchlist-sync.ps1) | Makes Radarr check your TMDB watchlist every 10 minutes ([part 7.7](docs/guide/07-get-movies-automatically.md#faster-check-every-10-minutes-optional)) |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to report a problem or suggest a change |
 
 ## Credits

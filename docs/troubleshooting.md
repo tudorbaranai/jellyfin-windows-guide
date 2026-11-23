@@ -83,6 +83,10 @@ Then right-click the torrent > **Force recheck** > Start. An errored torrent doe
 
 **Likely:** the downloads use all your upload. Set an upload limit of about 80% and about 100 connections in qBittorrent ([part 7.1](guide/07-get-movies-automatically.md#71-qbittorrent)).
 
+## Watchlist movies stop showing up after a Radarr update
+
+**Likely:** the new Radarr closed the 10-minute shortcut ([part 7.7](guide/07-get-movies-automatically.md#faster-check-every-10-minutes-optional)). Look for `ERROR` lines in `C:\ProgramData\WatchlistSync\sync.log`. Radarr's own 12-hour check still works, so movies still arrive, just slower.
+
 ## Radarr: "Unable to parse file"
 
 **Likely:** the release name has no year. Activity > Queue > the item > **Manual Import** > pick the movie.
